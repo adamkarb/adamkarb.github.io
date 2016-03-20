@@ -1,7 +1,7 @@
-/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
 
 html {
-    color: #222;
+    color: #444;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -56,143 +56,174 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+   /* Gradients
 
+    * Clear Sky
+    * #005C97
+    * #363795
+    * background: linear-gradient(to left, #005C97 , #363795);
 
+    * Vine
+    * #00bf8f
+    * #001510
+    * background: linear-gradient(to left, #00bf8f , #001510);
 
+    * Reef
+    * #00d2ff
+    * #3a7bd5
+    * background: linear-gradient(to left, #00d2ff , #3a7bd5);
+    *
 
+    */
 
+*, *:before, *:after {
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    color: #005c97;
+    /*color: #363795;*/
+}
 
+header {
+    padding: 30px;
+    background: linear-gradient(to left, #005C97 , #363795);
+    text-align: center;
+}
 
+.headshot {
+    margin: 0 auto;
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+    border: 2px solid #22AED1;
+    background-image: url('../img/Adam_Headshot2.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
+.name {
+    color: #22AED1;
+    margin-top: 25px;
+    font-size: 25px;
+}
 
+.description {
+    font-size: 18px;
+    color: #22AED1;
+    margin-top: 20px;
+}
 
+.icons {
+    font-size: 25px;
+    margin-top: 25px;
+}
 
+i {
+    display: inline-block;
+    color: #22aed1;
+}
+
+header a:nth-of-type(1) {
+    margin-right: 60px;
+}
+
+#content {
+    line-height: 25px;
+    padding: 20px;
+}
+
+.desc {
+    text-indent: 20px;
+}
+
+.hi {
+    color: #01A7C2;
+}
+
+a, a:visited, a:hover {
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    /*color: #22AED1;*/
+    color: #01a7c2;
+}
+
+.tag {
+    display: block;
+    margin-top: 15px;
+}
 
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (min-width: 500px) {
+
+    header {
+        padding: 40px;
+    }
+
+    .name {
+        font-size: 30px;
+    }
+
+    .description {
+        font-size: 22px;
+    }
+
+    #content {
+        padding: 40px 80px 0;
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    .desc {
+        text-indent: 35px;
+    }
 
 }
 
-@media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
+@media only screen and (min-width: 1000px) {
+
+    header {
+        display: table;
+        height: 100vh;
+        float: left;
+        width: 40%;
+    }
+
+    header .full-center {
+        display: table-cell;
+        height: 100%;
+        width: 100%;
+        vertical-align: middle;
+    }
+
+    #content {
+        display: table;
+        height: 100vh;
+        float: right;
+        width: 60%;
+    }
+
+    .bio {
+        display: table-cell;
+        height: 100%;
+        width: 100%;
+        vertical-align: middle;
+        overflow-y: auto;
+    }
 
 }
 
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
+@media only screen and (min-width: 1000px) and (max-height: 500px) {
 
-.hidden {
-    display: none !important;
-    visibility: hidden;
-}
-
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
-
-.invisible {
-    visibility: hidden;
-}
-
-.clearfix:before,
-.clearfix:after {
-    content: " ";
-    display: table;
-}
-
-.clearfix:after {
-    clear: both;
-}
-
-.clearfix {
-    *zoom: 1;
-}
-
-/* ==========================================================================
-   Print styles
-   ========================================================================== */
-
-@media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
+    .bio {
+        display: block;
     }
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
-
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
-
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
-
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
-
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
-
-    thead {
-        display: table-header-group;
-    }
-
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
-
-    img {
-        max-width: 100% !important;
-    }
-
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
-
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
 }

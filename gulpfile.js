@@ -4,6 +4,9 @@ const ROOT = __dirname;
 
 gulp.task('default', () => {
 
+    bs.watch('css/main.css').on('change', bs.reload);
+    bs.watch('index.html').on('change', bs.reload);
+
     bs.init({
         server: {
             baseDir: ROOT,
@@ -13,7 +16,8 @@ gulp.task('default', () => {
         port: 2222,
         ui: {
             port: 3333
-        }
+        },
+        tunnel: true
     });
 
 });
