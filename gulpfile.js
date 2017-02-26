@@ -1,6 +1,9 @@
+'use strict';
+
+const ROOT = __dirname;
+
 var gulp = require('gulp');
 var bs = require('browser-sync').create('github');
-const ROOT = __dirname;
 
 gulp.task('default', () => {
 
